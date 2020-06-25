@@ -36,5 +36,8 @@ msbuild.wrn
 obj/
 
 # Visual Studio 2015
-.vs/
+.vs/*
+.vs\
+.vs/OperationApps
 /BPBComputerGadgets-api/BPBComputerGadgets.API/bpbelectronicdb.db
+/ContainerInstancesScheduler/local.settings.json
