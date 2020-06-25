@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "name": "startTimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "runOnStartup": true
+    }
+  ],
+  "disabled": false
+}

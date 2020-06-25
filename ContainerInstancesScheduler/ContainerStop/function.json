@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "name": "stopTimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "runOnStartup": false
+    }
+  ],
+  "disabled": false
+} 

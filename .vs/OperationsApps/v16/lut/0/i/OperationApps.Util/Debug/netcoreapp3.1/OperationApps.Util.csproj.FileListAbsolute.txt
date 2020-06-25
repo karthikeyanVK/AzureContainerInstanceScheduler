@@ -1,0 +1,6 @@
+G:\Onemindindia\OperationsApps\.vs\OperationsApps\v16\lut\0\b\OperationApps.Util\Debug\netcoreapp3.1\OperationApps.Util.deps.json
+G:\Onemindindia\OperationsApps\.vs\OperationsApps\v16\lut\0\b\OperationApps.Util\Debug\netcoreapp3.1\OperationApps.Util.dll
+G:\Onemindindia\OperationsApps\.vs\OperationsApps\v16\lut\0\i\OperationApps.Util\Debug\netcoreapp3.1\OperationApps.Util.AssemblyInfoInputs.cache
+G:\Onemindindia\OperationsApps\.vs\OperationsApps\v16\lut\0\i\OperationApps.Util\Debug\netcoreapp3.1\OperationApps.Util.AssemblyInfo.cs
+G:\Onemindindia\OperationsApps\.vs\OperationsApps\v16\lut\0\i\OperationApps.Util\Debug\netcoreapp3.1\OperationApps.Util.csproj.CopyComplete
+G:\Onemindindia\OperationsApps\.vs\OperationsApps\v16\lut\0\i\OperationApps.Util\Debug\netcoreapp3.1\OperationApps.Util.dll
