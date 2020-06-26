@@ -9,7 +9,8 @@ namespace OperationApps.Util
         {
             var azure = GetAzureContext(credentialsPath);
             azure.ContainerGroups.StartAsync(resourceGroupName,
-                containerGroupName);
+                containerGroupName).GetAwaiter().GetResult();
+
             return true;
         }
         private static IAzure GetAzureContext(string credentialsPath)

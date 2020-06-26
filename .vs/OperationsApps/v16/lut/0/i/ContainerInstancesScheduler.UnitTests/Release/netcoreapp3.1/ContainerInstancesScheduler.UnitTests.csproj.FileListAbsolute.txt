@@ -1,2 +1,0 @@
-G:\Onemindindia\OperationsApps\.vs\OperationsApps\v16\lut\0\i\ContainerInstancesScheduler.UnitTests\Release\netcoreapp3.1\ContainerInstancesScheduler.UnitTests.AssemblyInfoInputs.cache
-G:\Onemindindia\OperationsApps\.vs\OperationsApps\v16\lut\0\i\ContainerInstancesScheduler.UnitTests\Release\netcoreapp3.1\ContainerInstancesScheduler.UnitTests.AssemblyInfo.cs

@@ -34,6 +34,7 @@ msbuild.log
 msbuild.err
 msbuild.wrn
 obj/
+obj/Debug/netcoreapp3.1
 
 # Visual Studio 2015
 .vs/

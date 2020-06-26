@@ -34,10 +34,13 @@ msbuild.log
 msbuild.err
 msbuild.wrn
 obj/
+obj/Debug/netcoreapp3.1
 
 # Visual Studio 2015
 .vs/*
 .vs\
+.vs/v16/
+
 .vs/OperationApps
 /BPBComputerGadgets-api/BPBComputerGadgets.API/bpbelectronicdb.db
 /ContainerInstancesScheduler/local.settings.json

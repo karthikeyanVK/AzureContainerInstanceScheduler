@@ -41,8 +41,9 @@ namespace OperationsApps
                     if (occurence != null && occurence.Any())
                     {
                         log.LogInformation($"ContainersStart function Started {containerScheduleDetail.ContainerImageName} at: {DateTime.Now}");
-                        azureContainerUtility.StartContainer(context.FunctionAppDirectory,
+                       var result = azureContainerUtility.StartContainer(context.FunctionAppDirectory,
                             containerScheduleDetail.ResourceGroupName, containerScheduleDetail.ContainerGroupName);
+
                         log.LogInformation($"ContainersStart function completed {containerScheduleDetail.ContainerImageName} at: {DateTime.Now}");
                     }
                     else

@@ -37,4 +37,5 @@ obj/
 
 # Visual Studio 2015
 .vs/
+.vs/v16/
 /BPBComputerGadgets-api/BPBComputerGadgets.API/bpbelectronicdb.db
