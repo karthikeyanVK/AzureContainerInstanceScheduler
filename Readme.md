@@ -12,17 +12,17 @@ Create a new Azure storage, visit [here](https://docs.microsoft.com/en-us/azure/
 
 Navigate to Access keys and get the Connection string and save it. 
 
-![](\docs\storagekeys.png)
+![](/docs/storagekeys.png)
 
 Create a new Table in the Azure portal of the Azure storage created. Navigate to Tables section and enter table name as ContainerScheduleDetails and press OK.
 
-![](\docs\createtable.png)
+![](/docs/createtable.png)
 
 You can deploy the ContainerInstancesScheduler Project into azure functions. On How to deploy azure functions, visit [here](https://tutorials.visualstudio.com/first-azure-function/publish)
 
 Navigate to Configuration section and add application settings as below.
 
-![](docs\azfuncconfiguration.png)
+![](/docs/azfuncconfiguration.png)
 
 
 AzureWebJobsStorage - <Copied Connection String>
