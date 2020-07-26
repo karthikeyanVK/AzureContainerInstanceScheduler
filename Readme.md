@@ -36,7 +36,7 @@ Connect the Table storage using Azure Storage Explorer. Connect to the Storage a
 
 Add the entry as below. 
 
-![](docs\add-entity.png)
+![](/docs/add-entity.png)
 
 ContainerGroupName - Enter any unique name, this is for your reference.
 
@@ -48,7 +48,7 @@ ResourceGroupName - Resource group name where your ACI Exists.
 
 Schedule - 20 8 * * * (Runs Every day at 8:20 AM, see below for more details ) 
 
-![](docs\scheduler-config.png)
+![scheduler](/docs/scheduler-config.png)
 
 isDisabled - Available incase you want to stop the ACI to run.
 
