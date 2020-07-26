@@ -76,6 +76,7 @@ namespace ContainerInstancesScheduler.UnitTests
         [InlineData("2020-06-09 12:05:00", "2020-06-09 12:15:00", "00 11 * * *")]
         [InlineData("2020-06-09 12:10:00", "2020-06-09 12:15:00", "00 11 * * *")]
         [InlineData("2020-06-09 12:10:00", "2020-06-09 12:15:00", "00 20 * * *")]
+        
         public void TestCronExpressionOutsideInFutureRange(string startDate, string endDate, string scheduleDate)
         {
             var cronSchedule = CrontabSchedule.Parse(scheduleDate);
@@ -107,8 +108,8 @@ namespace ContainerInstancesScheduler.UnitTests
             containersStart.Run(null, executionContext, logger);
 
             var msg = logger.Logs[0];
-            var containerImagesStartedMsg = logger.Logs[1];
-            var containerImagesEndMsg = logger.Logs[2];
+            var containerImagesStartedMsg = logger.Logs[2];
+            var containerImagesEndMsg = logger.Logs[3];
             Assert.Contains("ContainersStart function executed at", msg);
             Assert.Contains("ContainersStart function Started", containerImagesStartedMsg);
             Assert.Contains("ContainersStart function completed", containerImagesEndMsg);
@@ -135,11 +136,11 @@ namespace ContainerInstancesScheduler.UnitTests
                 Schedule = $"{testDateTime.Minute} {testDateTime.Hour} * * *"
             };
 
-            ContainersStart containersStart = new ContainersStart(GetMockTableStorageUtility(containerScheduleDetail), GetAzureContainerUtility());
+            var containersStart = new ContainersStart(GetMockTableStorageUtility(containerScheduleDetail), GetAzureContainerUtility());
             containersStart.Run(null, executionContext, logger);
 
             var msg = logger.Logs[0];
-            var containerImagesMsg = logger.Logs[1];
+            var containerImagesMsg = logger.Logs[3];
 
             Assert.Contains("ContainersStart function executed at", msg);
             Assert.Contains("ContainersStart function Completed", containerImagesMsg);
