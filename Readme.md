@@ -1,5 +1,7 @@
 # Azure Container Instance Scheduler
 
+This repository is used for stopping and starting the container services. Since the container services does support any schedule by default, this repository was created. This repository is nothing but a azure function that starts and stops ACI to save cost. You can stop the ACI when it is not needed and start it when needed. 
+
 This scheduler is based on the assumption that you have your docker images uploaded to ACR and docker image running in ACI. 
 
 For Creating ACR Refer here - https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal
@@ -13,7 +15,7 @@ Create a new Azure storage, visit [here](https://docs.microsoft.com/en-us/azure/
 Navigate to Access keys and get the Connection string and save it. 
 ![storagekeys](/docs/storagekeys.png)
 
-Create a new Table in the Azure portal of the Azure storage created. Navigate to Tables section and enter table name as ContainerScheduleDetails and press OK.
+Create a new Table in the Azure portal of the Azure storage created. Navigate to Tables section, add new Table and enter table name as ContainerScheduleDetails and press OK.
 
 ![createtable](/docs/createtable.png)
 
@@ -58,6 +60,15 @@ isDisabled - Available incase you want to stop the ACI to run.
 ```
 
 Once you click on Insert a record will be created in the table and then your ACI will be automatically triggered and will run on schedule.
+
+Local Development Testing
+
+Rename the local.dev.settings.json to local.settings.json 
+Build the application.
+Add the details about the ACI in table storage
+Run and test the application.
+
+
 
 
 

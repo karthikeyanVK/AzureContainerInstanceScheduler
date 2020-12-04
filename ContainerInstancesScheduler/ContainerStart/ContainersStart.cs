@@ -8,7 +8,7 @@ using OperationApps.Util;
 
 namespace OperationsApps
 {
-    public  class ContainersStart
+    public class ContainersStart
     {
         private ITableStorageUtility tableStorageUtility;
         private IAzureContainerUtility azureContainerUtility;
@@ -19,7 +19,7 @@ namespace OperationsApps
         }
 
         [FunctionName("ContainersStart")]
-        public  void Run([TimerTrigger("%ContainerStartSchedule%")]
+        public void Run([TimerTrigger("%ContainerStartSchedule%")]
             TimerInfo startTimer, ExecutionContext context,
              ILogger log)
         {
@@ -28,21 +28,22 @@ namespace OperationsApps
 
                 log.LogInformation($"ContainersStart function executed at: {DateTime.Now}");
 
-                var containerScheduleDetails = tableStorageUtility.GetContainerScheduleDetails<ContainerScheduleDetail>().Result;
-                
+                var containerScheduleDetails =
+                tableStorageUtility.GetContainerScheduleDetails<ContainerScheduleDetail>().Result.Where(c => !c.isDisabled);
+
                 foreach (var containerScheduleDetail in containerScheduleDetails)
                 {
                     log.LogInformation($"containerScheduleDetail { JsonConvert.SerializeObject(containerScheduleDetail)}");
-                    var cronSchedule = CrontabSchedule.Parse(containerScheduleDetail.Schedule);
+                    var cronSchedule = CrontabSchedule.Parse(containerScheduleDetail.StartSchedule);
                     var occurence =
                         cronSchedule.GetNextOccurrences(DateTime.Now.AddMinutes(-15), DateTime.Now.AddMinutes(15));
-                    
 
                     if (occurence != null && occurence.Any())
                     {
                         log.LogInformation($"ContainersStart function Started {containerScheduleDetail.ContainerImageName} at: {DateTime.Now}");
-                       var result = azureContainerUtility.StartContainer(context.FunctionAppDirectory,
-                            containerScheduleDetail.ResourceGroupName, containerScheduleDetail.ContainerGroupName);
+
+                        var result = azureContainerUtility.StartContainer(context.FunctionAppDirectory,
+                             containerScheduleDetail.ResourceGroupName, containerScheduleDetail.ContainerGroupName);
 
                         log.LogInformation($"ContainersStart function completed {containerScheduleDetail.ContainerImageName} at: {DateTime.Now}");
                     }

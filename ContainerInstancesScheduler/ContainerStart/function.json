@@ -4,8 +4,8 @@
       "name": "startTimer",
       "type": "timerTrigger",
       "direction": "in",
-      "runOnStartup": true
+      "runOnStartup": false
     }
   ],
-  "disabled": false
+  "disabled": true
 }

@@ -102,7 +102,7 @@ namespace ContainerInstancesScheduler.UnitTests
             { 
                 ResourceGroupName = "",
                 ContainerImageName = "",
-                Schedule = $"{testDateTime.Minute} {testDateTime.Hour} * * *"
+                StartSchedule = $"{testDateTime.Minute} {testDateTime.Hour} * * *"
             };
             ContainersStart containersStart = new ContainersStart(GetMockTableStorageUtility(containerScheduleDetail), GetAzureContainerUtility());
             containersStart.Run(null, executionContext, logger);
@@ -133,7 +133,7 @@ namespace ContainerInstancesScheduler.UnitTests
             {
                 ResourceGroupName = "",
                 ContainerImageName = "",
-                Schedule = $"{testDateTime.Minute} {testDateTime.Hour} * * *"
+                StartSchedule = $"{testDateTime.Minute} {testDateTime.Hour} * * *"
             };
 
             var containersStart = new ContainersStart(GetMockTableStorageUtility(containerScheduleDetail), GetAzureContainerUtility());

@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Linq;
 using Microsoft.Azure.Management.Fluent;
 
 namespace OperationApps.Util
@@ -13,6 +14,24 @@ namespace OperationApps.Util
 
             return true;
         }
+
+        public bool StopContainer(string credentialsPath, string resourceGroupName, string containerGroupName)
+        {
+            IAzure azure = GetAzureContext(credentialsPath);
+
+            var containers = azure
+                .ContainerGroups
+                .List().ToList();
+
+
+            azure
+               .ContainerGroups
+               .GetById(containers.FirstOrDefault(x => x.Name == containerGroupName)?.Id)
+               .StopAsync().GetAwaiter().GetResult();
+
+            return true;
+        }
+
         private static IAzure GetAzureContext(string credentialsPath)
         {
             var azureAuthFile = Path.Combine(credentialsPath, "credentials.json");

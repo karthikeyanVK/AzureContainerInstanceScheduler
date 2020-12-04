@@ -8,9 +8,10 @@ namespace OperationsApps
         public string ContainerName { get; set; }
         public string ResourceGroupName { get; set; }
         public string ContainerImageName { get; set; }
-        public string Schedule { get; set; }
+        public string StartSchedule { get; set; }
         public string ContainerGroupName { get; set; }
-        public string isDisabled { get; set; }
+        public bool isDisabled { get; set; }
+        public string StopSchedule { get; set; }
 
     }
 }
